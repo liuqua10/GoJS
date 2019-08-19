@@ -991,7 +991,16 @@
 					<a href="../symbols/Tool.html" class="linkConstructor">Tool</a>.</span>
 				
 
-				The ClickCreatingTool lets the user create a node by clicking where they want the new node to be.By default a double-click is required to start this tool;set <a href="../symbols/ClickCreatingTool.html#isDoubleClick" class="linkProperty">isDoubleClick</a> to false if you want a single-click to create a node.<p>This tool is a standard mouse-up tool, the <a href="../symbols/ToolManager.html#clickCreatingTool" class="linkProperty">ToolManager.clickCreatingTool</a>.However, it will not be able to start running unless you have set the<a href="../symbols/ClickCreatingTool.html#archetypeNodeData" class="linkProperty">archetypeNodeData</a> property to an object that can be copied and added to the diagram's model.<p>This tool does not utilize any <a href="../symbols/Adornment.html" class="linkConstructor">Adornment</a>s or tool handles.This tool does conduct a transaction when inserting the new node.
+				The ClickCreatingTool lets the user create a node by clicking where they want the new node to be.
+By default a double-click is required to start this tool;
+set <a href="../symbols/ClickCreatingTool.html#isDoubleClick" class="linkProperty">isDoubleClick</a> to false if you want a single-click to create a node.
+<p>
+This tool is a standard mouse-up tool, the <a href="../symbols/ToolManager.html#clickCreatingTool" class="linkProperty">ToolManager.clickCreatingTool</a>.
+However, it will not be able to start running unless you have set the
+<a href="../symbols/ClickCreatingTool.html#archetypeNodeData" class="linkProperty">archetypeNodeData</a> property to an object that can be copied and added to the diagram's model.
+<p>
+This tool does not utilize any <a href="../symbols/Adornment.html" class="linkConstructor">Adornment</a>s or tool handles.
+This tool does conduct a transaction when inserting the new node.
 			</p>
       <span class="hideshowall"><span class="nodetails"><button id="buttonShow">Show Details</button></span><span class="details"><button id="buttonHide">Show Summaries</button></span></span>
 <!-- ============================== constructor summary ==================== -->
@@ -1014,7 +1023,8 @@
 							</div>
               </td>
               <td class="description">
-							<div class="description">You do not normally need to create an instance of this toolbecause one already exists as the <a href="../symbols/ToolManager.html#clickCreatingTool" class="linkProperty">ToolManager.clickCreatingTool</a>, which you can modify.
+							<div class="description">You do not normally need to create an instance of this tool
+because one already exists as the <a href="../symbols/ToolManager.html#clickCreatingTool" class="linkProperty">ToolManager.clickCreatingTool</a>, which you can modify.
 					    
 					    
 
@@ -1052,7 +1062,10 @@
                 </div>
               </td>
                 <td class="description">
-                 <div class="description">Gets or sets a data object that will be copied and added to the diagram's model each time this tool executes.<span class="nodetails" id="xproparchetypeNodeData"><a onclick="hst('proparchetypeNodeData')"> More...</a></span> <span class="details" id="proparchetypeNodeData">The default value is null.The value must be non-null for this tool to be able to run.Setting this property does not raise any events.
+                 <div class="description">Gets or sets a data object that will be copied and added to the diagram's model each time this tool executes.<span class="nodetails" id="xproparchetypeNodeData"><a onclick="hst('proparchetypeNodeData')"> More...</a></span> <span class="details" id="proparchetypeNodeData">
+The default value is null.
+The value must be non-null for this tool to be able to run.
+Setting this property does not raise any events.
               
             </span> <!-- end summarize -->
         </div>
@@ -1070,7 +1083,10 @@
                 </div>
               </td>
                 <td class="description">
-                 <div class="description">Gets or sets whether a double click rather than a single-click is requiredto insert a new <a href="../symbols/Part.html" class="linkConstructor">Part</a> at the mouse-up point.<span class="nodetails" id="xpropisDoubleClick"><a onclick="hst('propisDoubleClick')"> More...</a></span> <span class="details" id="propisDoubleClick">The default value is true -- only a double-click will cause a node to be created.Setting this property does not raise any events.
+                 <div class="description">Gets or sets whether a double click rather than a single-click is required
+to insert a new <a href="../symbols/Part.html" class="linkConstructor">Part</a> at the mouse-up point.<span class="nodetails" id="xpropisDoubleClick"><a onclick="hst('propisDoubleClick')"> More...</a></span> <span class="details" id="propisDoubleClick">
+The default value is true -- only a double-click will cause a node to be created.
+Setting this property does not raise any events.
               
             </span> <!-- end summarize -->
         </div>
@@ -1115,7 +1131,12 @@
                 </div>
                 </td>
                 <td class="description">
-								<div class="description">This tool can run when the diagram is not read-only and supports creating new nodes,and when there has been a click (or double-click if <a href="../symbols/ClickCreatingTool.html#isDoubleClick" class="linkProperty">isDoubleClick</a> is true)in the background of the diagram (not on a <a href="../symbols/Part.html" class="linkConstructor">Part</a>),and <a href="../symbols/ClickCreatingTool.html#archetypeNodeData" class="linkProperty">archetypeNodeData</a> is an object that can be copied and added to the model.<span class="nodetails" id="xmethcanStart"><a onclick="hst('methcanStart')"> More...</a></span> <span class="details" id="methcanStart"><p>This method may be overridden.
+								<div class="description">This tool can run when the diagram is not read-only and supports creating new nodes,
+and when there has been a click (or double-click if <a href="../symbols/ClickCreatingTool.html#isDoubleClick" class="linkProperty">isDoubleClick</a> is true)
+in the background of the diagram (not on a <a href="../symbols/Part.html" class="linkConstructor">Part</a>),
+and <a href="../symbols/ClickCreatingTool.html#archetypeNodeData" class="linkProperty">archetypeNodeData</a> is an object that can be copied and added to the model.<span class="nodetails" id="xmethcanStart"><a onclick="hst('methcanStart')"> More...</a></span> <span class="details" id="methcanStart">
+<p>
+This method may be overridden.
                  
 						      
 						      
@@ -1164,7 +1185,17 @@
                 </div>
                 </td>
                 <td class="description">
-								<div class="description">Create a node by adding a copy of the <a href="../symbols/ClickCreatingTool.html#archetypeNodeData" class="linkProperty">archetypeNodeData</a> objectto the diagram's model, assign its <a href="../symbols/Part.html#location" class="linkProperty">Part.location</a>to be the given point, and select the new part.<span class="nodetails" id="xmethinsertPart"><a onclick="hst('methinsertPart')"> More...</a></span> <span class="details" id="methinsertPart"><p>This starts and commits a transaction and also raises the "PartCreated" <a href="../symbols/DiagramEvent.html" class="linkConstructor">DiagramEvent</a>.The actual part that is added to the diagram may be a <a href="../symbols/Part.html" class="linkConstructor">Part</a>, a <a href="../symbols/Node.html" class="linkConstructor">Node</a>,or even a <a href="../symbols/Group.html" class="linkConstructor">Group</a>, depending on the properties of the <a href="../symbols/ClickCreatingTool.html#archetypeNodeData" class="linkProperty">archetypeNodeData</a>and the type of the template that is copied to create the part.<p>This method may be overridden, although it is usually much easier to just set <a href="../symbols/ClickCreatingTool.html#archetypeNodeData" class="linkProperty">archetypeNodeData</a>.Please read the Introduction page on <a href="../../intro/extensions.html">Extensions</a> for how to override methods and how to call this base method.
+								<div class="description">Create a node by adding a copy of the <a href="../symbols/ClickCreatingTool.html#archetypeNodeData" class="linkProperty">archetypeNodeData</a> object
+to the diagram's model, assign its <a href="../symbols/Part.html#location" class="linkProperty">Part.location</a>
+to be the given point, and select the new part.<span class="nodetails" id="xmethinsertPart"><a onclick="hst('methinsertPart')"> More...</a></span> <span class="details" id="methinsertPart">
+<p>
+This starts and commits a transaction and also raises the "PartCreated" <a href="../symbols/DiagramEvent.html" class="linkConstructor">DiagramEvent</a>.
+The actual part that is added to the diagram may be a <a href="../symbols/Part.html" class="linkConstructor">Part</a>, a <a href="../symbols/Node.html" class="linkConstructor">Node</a>,
+or even a <a href="../symbols/Group.html" class="linkConstructor">Group</a>, depending on the properties of the <a href="../symbols/ClickCreatingTool.html#archetypeNodeData" class="linkProperty">archetypeNodeData</a>
+and the type of the template that is copied to create the part.
+<p>
+This method may be overridden, although it is usually much easier to just set <a href="../symbols/ClickCreatingTool.html#archetypeNodeData" class="linkProperty">archetypeNodeData</a>.
+Please read the Introduction page on <a href="../../intro/extensions.html">Extensions</a> for how to override methods and how to call this base method.
                  
 						      
 							      <dl class="detailList">
