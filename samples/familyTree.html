@@ -48,43 +48,28 @@
     // this is a click event handler that adds a node and a link to the diagram,
     // connecting with the node on which the click occurred
     function addNodeAndLink(e, obj) {
-      var fromNode = obj.part;
-      var diagram = fromNode.diagram;
-      diagram.startTransaction("Add State");
-      // get the node data for which the user clicked the button
-      var fromData = fromNode.data;
-      // create a new "State" data object, positioned off to the right of the fromNode
-      var p = fromNode.location.copy();
-      // alert(p)
-      p.x += 10;
-      // alert(go.Point.stringify(p))
-      var toData = {
-        text: "new",
-        loc: go.Point.stringify(p)
-      };
-      // add the new node data to the model
-      var model = diagram.model;
-      model.addNodeData(toData);
-      // create a link data from the old node data to the new node data
-      // alert(model.getParentKeyForNodeData(fromData))
-      var linkdata = {
-        from: model.getParentKeyForNodeData(fromData)
-      };
-      // and add the link data to the model
-      var from_key = getParentKeyForNodeData(fromData);
-      // model.setParentKeyForNodeData(fromData);
-      // select the new Node
-      var newnode = diagram.findNodeForData(toData);
-      setParentKeyForNodeData(newnode, from_key);
-      alert(newnode.fromData)
-      diagram.select(newnode);
-      // snap the new node to a valid location
-      newnode.location = diagram.toolManager.draggingTool.computeMove(newnode, p);
-      alert(newnode.location)
-      // then account for any overlap
-      shiftNodesToEmptySpaces();
-      diagram.commitTransaction("Add State");
+      var node = obj.part;
+      if (node !== null) {
+        var thisemp = node.data;
+        myDiagram.startTransaction("add child");
+        var nextkey = (myDiagram.model.nodeDataArray.length + 1).toString();
+        var newemp = { key: nextkey, name: "(new person)", title: "", parent: thisemp.key };
+        myDiagram.model.addNodeData(newemp);
+        myDiagram.commitTransaction("add child");
+      }
     }
+
+    // function nodeDoubleClick(e, obj) {
+    //   var clicked = obj.part;
+    //   if (clicked !== null) {
+    //     var thisemp = clicked.data;
+    //     myDiagram.startTransaction("add employee");
+    //     var nextkey = (myDiagram.model.nodeDataArray.length + 1).toString();
+    //     var newemp = { key: nextkey, name: "(new person)", title: "", parent: thisemp.key };
+    //     myDiagram.model.addNodeData(newemp);
+    //     myDiagram.commitTransaction("add employee");
+    //   }
+    // }
 
     // get tooltip text from the object's data
     function tooltipTextConverter(person) {
